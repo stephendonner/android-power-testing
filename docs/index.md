@@ -14,6 +14,7 @@
 
 Android Intents
 * -a android.intent.action.VIEW
+* -a android.intent.action.MAIN
 
 
 Binary Paths:
