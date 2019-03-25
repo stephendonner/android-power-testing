@@ -24,12 +24,14 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 ```
  * even then, due to (wise) scheme-handling/remote-loading security models, they are unlikely to work (i.e. be parsed)
   * note to self: [insert example from recent shell session, here]:
-   * $
+    * $
 * profile pre-seeded with remote URL as homepage
   * implies additional profile seeding/management (but, done well, guess this could also help centralize/abstract a bit?)
 * profile pre-seeded with local (to-sdcard/file?) file path
 * ...or is this mostly moot with Raptor (via [runner.js](https://searchfox.org/mozilla-central/rev/b3ac60ff061c7891e77c26b73b61804aa1a8f682/testing/raptor/webext/raptor/runner.js)) being able to inject content at/after runtime?
 * (least-favorite option?) loading remote "dead-pixel test" pages:
+```
+.
 ```
 
 # Fennec
@@ -46,18 +48,11 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 * org.mozilla.gecko.BrowserApp
 *
 
-Namespaces:
+Binary Paths:
 * Fennec (release) - ```org.mozilla.firefox```
-* Fenix - ```org.mozilla.
+* Fenix - ```org.mozilla.fenix```
 * GeckoView - ```org.mozilla.geckoview```
-* Reference Browser -
-
---binary Paths
-* Fennec
-* GeckoView
-*
-
-
+* Reference Browser - 
 
 ```
 $ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.App -a android.intent.action.VIEW -d URL
@@ -108,9 +103,9 @@ android-power-testing on  master [!] took 14s
 # Fenix
 
 ## APKs/Builds
+* https://github.com/mozilla-mobile/fenix#build-instructions
 
-
-On Fenix support for Raptor, "I did add some level of Raptor integration to Fenix, but I only put it in debug builds and special builds to avoid allowing malicious apps to run Fenix with arbitrary WebExtensions."
+From #fenix on Slack, re: Fenix support for Raptor, "I did add some level of Raptor integration to Fenix, but I only put it in debug builds and special builds to avoid allowing malicious apps to run Fenix with arbitrary WebExtensions."
 
 ```
 $ adb shell am start -n "org.mozilla.fenix.debug/org.mozilla.fenix.HomeActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
@@ -119,11 +114,10 @@ $ adb shell am start -n "org.mozilla.fenix.debug/org.mozilla.fenix.HomeActivity"
 ```
 $ adb shell am start -a "android.intent.action.VIEW" -d "http://developer.android.com"
 ```
-Per the above, it appears once you have the namespace (what I call it) in adb, the calls to android.intent.action.VIEW or .MAIN, etc., can happen separately
-
-```
+Per the above, it appears once you namespace (what I call it) in adb, the calls to android.intent.action.VIEW or .MAIN, etc., can happen separately
 
 Below illustrates that -d about:blank works
+```
 $ adb shell am start -a "android.intent.action.VIEW" -d about:blank
 Starting: Intent { act=android.intent.action.VIEW dat=about:blank }
 ```
