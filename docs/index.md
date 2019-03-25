@@ -9,6 +9,17 @@
 * Builds atop Bob Clary's work with Rob Wood on [power.py](https://searchfox.org/mozilla-central/rev/b3ac60ff061c7891e77c26b73b61804aa1a8f682/testing/raptor/raptor/power.py)
 * Raptor power-testing code refactoring needed to quickly abstract and extend supported testing capabilities ([bug 1534778](https://bugzilla.mozilla.org/show_bug.cgi?id=1534778) 'quick' first step)
 
+## Example Android {intents, namespaces, binary paths} to Vet
+(Key parts, below; mix and match with the namespace of whichever browser variant you're targetting).  They are as-of-yet unvetted for our DOM-color testing needs.
+* org.mozilla.gecko.BrowserApp
+*
+
+Binary Paths:
+* Fennec (release) - ```org.mozilla.firefox```
+* Fenix - ```org.mozilla.fenix```
+* GeckoView - ```org.mozilla.geckoview```
+* Reference Browser - 
+
 ## Initial Testing Focus
 Example given from [bug 1511350](https://bugzilla.mozilla.org/show_bug.cgi?id=1511350#c0):
 
@@ -42,17 +53,6 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 
 ## Docs
 * https://wiki.mozilla.org/Mobile/Fennec/Android
-
-## Example Android {intents, namespaces, binary paths} to Vet
-(Key parts, below; mix and match with the namespace of whichever browser variant you're targetting).  They are as-of-yet unvetted for our DOM-color testing needs.
-* org.mozilla.gecko.BrowserApp
-*
-
-Binary Paths:
-* Fennec (release) - ```org.mozilla.firefox```
-* Fenix - ```org.mozilla.fenix```
-* GeckoView - ```org.mozilla.geckoview```
-* Reference Browser - 
 
 ```
 $ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.App -a android.intent.action.VIEW -d URL
