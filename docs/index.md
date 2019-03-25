@@ -48,52 +48,6 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d https://jasonfarrell.com/misc/deadpixeltest.php?p=2
 ```
 
-# Fennec
-
-## APKs/Builds
-* [Fennec 66.0 APK](http://archive.mozilla.org/pub/mobile/releases/66.0/android-x86/en-US/)
-
-## Docs
-* https://wiki.mozilla.org/Mobile/Fennec/Android
-
-## Examples
-```
-$ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
-```
-The above:
-* launches Fennec
-* tries to search Google for data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E (as the string you read here)
-
-```
-$ ./mach raptor-test --power-test --test raptor-speedometer --app fennec --binary org.mozilla.firefox --host 10.0.0.26
-```
-
-# GeckoView
-
-## APKs/Builds
-
-## Docs
-* [Bootstrap Gecko](https://mozilla.github.io/geckoview/tutorials/geckoview-quick-start#bootstrap-gecko), for GeckoView and Fennec (Fenix too?) development
-
-## Examples
-* GeckoView power.py battery-level/usage test-run [console output](https://gist.github.com/stephendonner/f864cdf861d8b221e7c80f7f73354fde#file-raptor-power-geckoview-success-txt) (Moto G5, Android 7):
-
-# Reference Browser
-
-## APKs/Builds
-* Direct link to [latest nightly APK](https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-aarch64-release-unsigned.apk), which we can use in automation/shell scripts
-
-## Docs
-
-## Examples
-Can't yet get ```adb -d install [nightly.apk]``` working:
-```
-➜ adb -d install /Users/stephendonner/Downloads/app-geckoNightly-aarch64-release-unsigned.apk
-adb: failed to install /Users/stephendonner/Downloads/app-geckoNightly-aarch64-release-unsigned.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]
-
-android-power-testing on  master [!] took 14s
-```
-
 # Fenix
 
 ## APKs/Builds
@@ -112,12 +66,69 @@ $ adb shell am start -n "org.mozilla.fenix.debug/org.mozilla.fenix.HomeActivity"
 $ adb shell am start -a "android.intent.action.VIEW" -d "http://developer.android.com"
 ```
 
-Below illustrates that -d about:blank works
+# Fennec
+
+## APKs/Builds
+* [Fennec 66.0 APK](http://archive.mozilla.org/pub/mobile/releases/66.0/android-x86/en-US/)
+
+## Docs
+* https://wiki.mozilla.org/Mobile/Fennec/Android
+
+## Examples
 ```
-$ adb shell am start -a "android.intent.action.VIEW" -d about:blank
-Starting: Intent { act=android.intent.action.VIEW dat=about:blank }
+$ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
+```
+The above:
+* launches Fennec
+* tries to search Google for data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E (as the string you read here)
+## Raptor Power Testing
+```
+$ ./mach raptor-test --power-test --test raptor-speedometer --app fennec --binary org.mozilla.firefox --host 10.0.0.26
 ```
 
+
+
+```
+$ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d https://jasonfarrell.com/misc/deadpixeltest.php?p=2
+Starting: Intent { act=android.intent.action.VIEW dat=https://jasonfarrell.com/... cmp=org.mozilla.firefox/org.mozilla.gecko.BrowserApp }
+```
+
+# GeckoView
+
+## APKs/Builds
+
+## Docs
+* [Bootstrap Gecko](https://mozilla.github.io/geckoview/tutorials/geckoview-quick-start#bootstrap-gecko), for GeckoView and Fennec (Fenix too?) development
+
+## Examples
+* GeckoView power.py battery-level/usage test-run [console output](https://gist.github.com/stephendonner/f864cdf861d8b221e7c80f7f73354fde#file-raptor-power-geckoview-success-txt) (Moto G5, Android 7):
+
+## Raptor Power Testing
+
+# Reference Browser
+
+## APKs/Builds
+* Direct link to [latest nightly APK](https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-aarch64-release-unsigned.apk), which we can use in automation/shell scripts
+
+## Install
+
+adb install -d 
+
+## Docs
+
+https://github.com/mozilla-mobile/reference-browser
+https://github.com/mozilla-mobile/android-components
+
+## Examples
+Can't yet get ```adb -d install [nightly.apk]``` working:
+```
+➜ adb -d install /Users/stephendonner/Downloads/app-geckoNightly-aarch64-release-unsigned.apk
+adb: failed to install /Users/stephendonner/Downloads/app-geckoNightly-aarch64-release-unsigned.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]
+
+android-power-testing on  master [!] took 14s
+```
+
+## Raptor Power Testing
 
 # Random Resources
 * [ADB docs](https://developer.android.com/studio/command-line/adb)
