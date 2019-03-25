@@ -54,24 +54,13 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 ## Docs
 * https://wiki.mozilla.org/Mobile/Fennec/Android
 
+
 ```
-$ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.App -a android.intent.action.VIEW -d URL
-```
-```
-$ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.MAIN -d data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
+$ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 ```
 The above:
 * launches Fennec
-* tries to load data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E in Google (as the string you read here)
-
-```
-  $ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.MAIN -d data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
-  Starting: Intent { act=android.intent.action.MAIN dat=data:text/html,<body style="background-color:black"> cmp=org.mozilla.firefox/org.mozilla.gecko.App }
-  Error type 3
-  Error: Activity class {org.mozilla.firefox/org.mozilla.gecko.App} does not exist.
-```
-
-
+* tries to search Google for data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E (as the string you read here)
 
 # GeckoView
 
