@@ -19,6 +19,7 @@ Android Intents
 
 Binary Paths:
 * Fennec (release) - ```org.mozilla.firefox```
+* Fennec (beta?) - ```.org.mozilla.fennec_aurora```
 * Fenix - ```org.mozilla.fenix```
 * GeckoView - ```org.mozilla.geckoview```
 * Reference Browser - 
