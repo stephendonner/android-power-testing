@@ -45,7 +45,7 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 * ...or is this mostly moot with Raptor (via [runner.js](https://searchfox.org/mozilla-central/rev/b3ac60ff061c7891e77c26b73b61804aa1a8f682/testing/raptor/webext/raptor/runner.js)) being able to inject content at/after runtime?
 * (least-favorite option?) loading remote "dead-pixel test" pages:
 ```
-.
+adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d https://jasonfarrell.com/misc/deadpixeltest.php?p=2
 ```
 
 # Fennec
@@ -57,7 +57,6 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 * https://wiki.mozilla.org/Mobile/Fennec/Android
 
 ## Examples
-
 ```
 $ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 ```
@@ -87,7 +86,6 @@ $ ./mach raptor-test --power-test --test raptor-speedometer --app fennec --binar
 ## Docs
 
 ## Examples
-
 Can't yet get ```adb -d install [nightly.apk]``` working:
 ```
 ➜ adb -d install /Users/stephendonner/Downloads/app-geckoNightly-aarch64-release-unsigned.apk
@@ -104,7 +102,6 @@ android-power-testing on  master [!] took 14s
 ## Docs
 
 ## Examples
-
 From #fenix on Slack, re: Fenix support for Raptor, "I did add some level of Raptor integration to Fenix, but I only put it in debug builds and special builds to avoid allowing malicious apps to run Fenix with arbitrary WebExtensions."
 
 ```
@@ -114,7 +111,6 @@ $ adb shell am start -n "org.mozilla.fenix.debug/org.mozilla.fenix.HomeActivity"
 ```
 $ adb shell am start -a "android.intent.action.VIEW" -d "http://developer.android.com"
 ```
-Per the above, it appears once you namespace (what I call it) in adb, the calls to android.intent.action.VIEW or .MAIN, etc., can happen separately
 
 Below illustrates that -d about:blank works
 ```
