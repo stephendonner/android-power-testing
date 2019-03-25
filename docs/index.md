@@ -53,9 +53,10 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 ## APKs/Builds
 * [Fennec 66.0 APK](http://archive.mozilla.org/pub/mobile/releases/66.0/android-x86/en-US/)
 
-
 ## Docs
 * https://wiki.mozilla.org/Mobile/Fennec/Android
+
+## Examples
 
 ```
 $ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
@@ -83,6 +84,10 @@ $ ./mach raptor-test --power-test --test raptor-speedometer --app fennec --binar
 ## APKs/Builds
 * Direct link to [latest nightly APK](https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-aarch64-release-unsigned.apk), which we can use in automation/shell scripts
 
+## Docs
+
+## Examples
+
 Can't yet get ```adb -d install [nightly.apk]``` working:
 ```
 ➜ adb -d install /Users/stephendonner/Downloads/app-geckoNightly-aarch64-release-unsigned.apk
@@ -95,6 +100,10 @@ android-power-testing on  master [!] took 14s
 
 ## APKs/Builds
 * https://github.com/mozilla-mobile/fenix#build-instructions
+
+## Docs
+
+## Examples
 
 From #fenix on Slack, re: Fenix support for Raptor, "I did add some level of Raptor integration to Fenix, but I only put it in debug builds and special builds to avoid allowing malicious apps to run Fenix with arbitrary WebExtensions."
 
