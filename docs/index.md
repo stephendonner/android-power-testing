@@ -11,14 +11,17 @@
 
 ## Example Android {intents, namespaces, binary paths} to Vet
 (Key parts, below; mix and match with the namespace of whichever browser variant you're targetting).  They are as-of-yet unvetted for our DOM-color testing needs.
-* org.mozilla.gecko.BrowserApp
-*
+
+Android Intents
+* -a android.intent.action.VIEW
+
 
 Binary Paths:
 * Fennec (release) - ```org.mozilla.firefox```
 * Fenix - ```org.mozilla.fenix```
 * GeckoView - ```org.mozilla.geckoview```
 * Reference Browser - 
+
 
 ## Initial Testing Focus
 Example given from [bug 1511350](https://bugzilla.mozilla.org/show_bug.cgi?id=1511350#c0):
@@ -54,13 +57,16 @@ data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 ## Docs
 * https://wiki.mozilla.org/Mobile/Fennec/Android
 
-
 ```
 $ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a android.intent.action.VIEW -d data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 ```
 The above:
 * launches Fennec
 * tries to search Google for data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E (as the string you read here)
+
+```
+$ ./mach raptor-test --power-test --test raptor-speedometer --app fennec --binary org.mozilla.firefox --host 10.0.0.26
+```
 
 # GeckoView
 
@@ -71,10 +77,6 @@ The above:
 
 ## Examples
 * GeckoView power.py battery-level/usage test-run [console output](https://gist.github.com/stephendonner/f864cdf861d8b221e7c80f7f73354fde#file-raptor-power-geckoview-success-txt) (Moto G5, Android 7):
-
-```
-$ ./mach raptor-test --power-test --test raptor-speedometer --app fennec --binary org.mozilla.firefox --host 10.0.0.26
-```
 
 # Reference Browser
 
