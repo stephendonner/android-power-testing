@@ -110,11 +110,13 @@ Starting: Intent { act=android.intent.action.VIEW dat=https://jasonfarrell.com/.
 # Reference Browser
 
 ## APKs/Builds
-* Direct link to [latest nightly APK](https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-aarch64-release-unsigned.apk), which we can use in automation/shell scripts
+* Direct link to [latest nightly APK](https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-arm-armeabi-v7a-release-unsigned.apk), which we can use in automation/shell scripts
 
 ## Install
 
-adb install -d 
+```
+$ adb -d install /Users/stephendonner/Downloads/app-geckoNightly-arm-armeabi-v7a-release-unsigned.apk 
+```
 
 ## Docs
 
