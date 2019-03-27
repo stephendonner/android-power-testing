@@ -22,7 +22,7 @@ Binary Paths:
 * Fennec (beta?) - ```.org.mozilla.fennec_aurora```
 * Fenix - ```org.mozilla.fenix```
 * GeckoView - ```org.mozilla.geckoview```
-* Reference Browser - 
+* Reference Browser - ```org.mozilla.reference.browser```
 
 
 ## Initial Testing Focus
@@ -53,6 +53,7 @@ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a androi
 # Fenix
 
 ## APKs/Builds
+* APKs: https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-aarch64-release-unsigned.apk
 * https://github.com/mozilla-mobile/fenix#build-instructions
 
 ## Docs
