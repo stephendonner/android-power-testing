@@ -17,7 +17,7 @@ Android Intents
 * -a android.intent.action.MAIN
 
 
-Binary Paths:
+Binary Paths (```--binary```):
 * Fennec (release) - ```org.mozilla.firefox```
 * Fennec (beta?) - ```.org.mozilla.fennec_aurora```
 * Fenix - ```org.mozilla.fenix```
