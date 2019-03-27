@@ -38,6 +38,7 @@ Ostensibly, the following are our (mostly unvetted) options for testing with a b
 ```
 data%3Atext%2Fhtml%2C%3Cbody%20style%3D%22background-color%3Ablack%22%3E
 ```
+ * I think we need to base64-encode (https://www.base64encode.net/) (Python: https://github.com/base64encode/examples/blob/master/base64encode.py) the raw data: URL from bug 1511350
  * even then, due to (wise) scheme-handling/remote-loading security models, they are unlikely to work (i.e. be parsed)
   * note to self: [insert example from recent shell session, here]:
     * $
@@ -111,7 +112,8 @@ Starting: Intent { act=android.intent.action.VIEW dat=https://jasonfarrell.com/.
 # Reference Browser
 
 ## APKs/Builds
-* Direct link to [latest nightly APK](https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-arm-armeabi-v7a-release-unsigned.apk), which we can use in automation/shell scripts
+* APK
+Direct link to [latest nightly APK](https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-arm-armeabi-v7a-release-unsigned.apk), which we can use in automation/shell scripts
 
 ## Install
 
@@ -125,13 +127,6 @@ https://github.com/mozilla-mobile/reference-browser
 https://github.com/mozilla-mobile/android-components
 
 ## Examples
-Can't yet get ```adb -d install [nightly.apk]``` working:
-```
-➜ adb -d install /Users/stephendonner/Downloads/app-geckoNightly-aarch64-release-unsigned.apk
-adb: failed to install /Users/stephendonner/Downloads/app-geckoNightly-aarch64-release-unsigned.apk: Failure [INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113]
-
-android-power-testing on  master [!] took 14s
-```
 
 ## Raptor Power Testing
 
