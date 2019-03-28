@@ -131,5 +131,7 @@ https://github.com/mozilla-mobile/android-components
 ## Raptor Power Testing
 
 # Random Resources
-* [ADB docs](https://developer.android.com/studio/command-line/adb)
-* Handy ADB and fastboot gist: https://gist.github.com/MacKentoch/feb819727e9f3bacde307e9c53449daf
+* ADB
+  * [ADB docs](https://developer.android.com/studio/command-line/adb)
+  * [Handy ADB and fastboot gist](https://gist.github.com/MacKentoch/feb819727e9f3bacde307e9c53449daf)
+  * [ADB cheatsheet](https://devhints.io/adb)
