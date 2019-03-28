@@ -63,7 +63,7 @@ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a androi
 From #fenix on Slack, re: Fenix support for Raptor, "I did add some level of Raptor integration to Fenix, but I only put it in debug builds and special builds to avoid allowing malicious apps to run Fenix with arbitrary WebExtensions."
 
 ```
-$ adb shell am start -n "org.mozilla.fenix.debug/org.mozilla.fenix.HomeActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
+$ adb shell am start -n "org.mozilla.fenix/org.mozilla.fenix.HomeActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
 ```
 
 ```
