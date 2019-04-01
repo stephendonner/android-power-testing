@@ -53,9 +53,9 @@ adb shell am start -n org.mozilla.firefox/org.mozilla.gecko.BrowserApp -a androi
 
 # Fenix
 
-## APKs/Builds
-* APKs: https://index.taskcluster.net/v1/task/project.mobile.reference-browser.signed-nightly.nightly.latest/artifacts/public/app-geckoNightly-aarch64-release-unsigned.apk
-* https://github.com/mozilla-mobile/fenix#build-instructions
+## APKs/Build(s)
+* APKs: https://tools.taskcluster.net/index/project.mobile.fenix.signed-nightly.nightly/latest
+* Build(s): https://github.com/mozilla-mobile/fenix#build-instructions
 
 ## Docs
 
