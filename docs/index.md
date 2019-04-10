@@ -12,6 +12,8 @@
 ## Example Android {intents, namespaces, binary paths} to Vet
 (Key parts, below; mix and match with the namespace of whichever browser variant you're targetting).  They are as-of-yet unvetted for our DOM-color testing needs.
 
+Cross-reference with in-tree args, namespaces, and binary names: https://dxr.mozilla.org/mozilla-central/rev/a1eb490ba4480b756fcc4f92f8dbc753c66d7900/testing/raptor/test/test_cmdline.py
+
 Android Intents
 * -a android.intent.action.VIEW
 * -a android.intent.action.MAIN
