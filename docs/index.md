@@ -23,7 +23,7 @@ Binary Paths (```--binary```):
 * Fennec (release) - ```org.mozilla.firefox```
 * Fennec (beta?) - ```.org.mozilla.fennec_aurora```
 * Fenix - ```org.mozilla.fenix```
-* GeckoView - ```org.mozilla.geckoview```
+* GeckoView - ```org.mozilla.geckoview_example```
 * Reference Browser - ```org.mozilla.reference.browser```
 
 
